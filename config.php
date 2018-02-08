@@ -2,18 +2,12 @@
 
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'YOUR LOCATION');
-define('DB_USERNAME', 'YOUR USER NAME');
-define('DB_PASSWORD', 'YOUR PASSWORD');
-define('DB_NAME', 'YOUR DATABASE NAME');
- 
-/* Attempt to connect to MySQL database */
-try{
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("ERROR: Could not connect. " . $e->getMessage());
-}
-
+$serverName = "tcp:crudeapp.database.windows.net,1433";
+$connectionOptions = array(
+    "Database" => "CrudeDB",
+    "Uid" => "rooter@crudeapp",
+    "PWD" => "Test123$$$"
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 ?>
