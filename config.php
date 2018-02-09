@@ -13,18 +13,14 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 */
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'crudedb.database.windows.net');
-define('DB_USERNAME', 'rooter');
-define('DB_PASSWORD', 'Hello123');
-define('DB_NAME', 'CrudeDB');
  
 /* Attempt to connect to MySQL database */
-try{
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("ERROR: Could not connect. " . $e->getMessage());
+try {
+    $conn = new PDO("sqlsrv:server = tcp:crudedb.database.windows.net,1433; Database = CrudeDB", "rooter", "{Hello123}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 ?>
