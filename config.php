@@ -15,8 +15,9 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 server with default setting (user 'root' with no password) */
  
 /* Attempt to connect to MySQL database */
+// PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:crudedb.database.windows.net,1433; Database = CrudeDB", "rooter", "{Hello123}");
+    $conn = new PDO("sqlsrv:server = tcp:crudedb.database.windows.net,1433; Database = CrudeDB", "rooter", "{Test1234}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
