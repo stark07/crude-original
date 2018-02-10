@@ -1,10 +1,10 @@
 <?php
 
 /* Attempt to connect to MySQL database */
-$connectstr_dbhost = 'crudedb.database.windows.net';
-$connectstr_dbname = 'CrudeDB';
-$connectstr_dbusername = 'rooter';
-$connectstr_dbpassword = 'Test1234';
+$connectstr_dbhost = 'sql2.freemysqlhosting.net/';
+$connectstr_dbname = 'sql2220626';
+$connectstr_dbusername = 'sql2220626';
+$connectstr_dbpassword = 'fV8*pZ1*';
 
 
 // MS Azure does not allow direct access to MySQL configuration, only via environment
